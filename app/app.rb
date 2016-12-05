@@ -49,8 +49,8 @@ post '/signin' do
     session[:user_id] = user.id
     redirect to('/home')
   else
-    flash.now[:errors] = ['The email or password is incorrect']
-    erb :'sessions/new'
+    flash.now[:notice] = ['The email or password is incorrect']
+    erb :'users/signin'
   end
 end
 
@@ -79,6 +79,11 @@ post '/peep' do
   redirect'/home'
 end
 
+get '/signout' do
+  session[:user_id] = nil
+  session[:first_name] = nil
+  erb :'/users/signout'
+end
 
 # start the server if ruby file executed directly
 run! if app_file == $0

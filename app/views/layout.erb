@@ -15,6 +15,10 @@
       <% if flash[:notice] %>
       <div id='notice'><%= flash[:notice] %></div>
       <% end %>
+      <form action='/signout'>
+        <input type='submit' value="Sign out" >
+      </form>
     <%= yield %>
+
   </body>
 </html>
