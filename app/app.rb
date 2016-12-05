@@ -44,8 +44,14 @@ get '/signin' do
 end
 
 post '/signin' do
- p params
- redirect'/home'
+  user = User.authenticate(params[:email], params[:password])
+  if user
+    session[:user_id] = user.id
+    redirect to('/home')
+  else
+    flash.now[:errors] = ['The email or password is incorrect']
+    erb :'sessions/new'
+  end
 end
 
 
