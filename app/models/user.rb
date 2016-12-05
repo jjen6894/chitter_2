@@ -8,8 +8,8 @@ class User
   property :id,         Serial
   property :first_name, String
   property :surname,    String
-  property :username,   String
-  property :email,      String
+  property :username,   String, :unique => true
+  property :email,      String, :format => :email_address, :unique => true
 
   property :password_digest, Text
 

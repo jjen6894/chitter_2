@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.2.3'
 
   gem 'pry'
   gem 'sinatra'
@@ -9,6 +8,8 @@ ruby '2.2.3'
   gem 'rspec-sinatra'
   gem 'bcrypt'
   gem 'launchy'
+  gem 'sinatra-flash'
+
 
 
 group :test do
